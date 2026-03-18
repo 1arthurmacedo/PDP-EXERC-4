@@ -38,7 +38,11 @@ public class Prova {
     public void setQuestoes(List<Questao> questoes) {this.questoes = questoes;}
 
     public void substituirQuestao(int id, Questao nova) {
-        questoes.set(id, nova);
+        for (int i = 0 ; i < questoes.size() ; i++) {
+            if (questoes.get(i).getId() == id) {
+                questoes.set(i, nova);
+            }
+        }
     }
 
     public void printResumo() {
